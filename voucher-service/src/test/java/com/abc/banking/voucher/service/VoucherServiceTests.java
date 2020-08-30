@@ -35,8 +35,8 @@ public class VoucherServiceTests {
     void testGetByPhone() {
         // Setup our mock
         List<Voucher> vouchers = List.of(
-            new Voucher("12345", "voucher-code-1"), 
-            new Voucher("12345", "voucher-code-2")
+            new Voucher("12345", "d2a9nRzhFZIiv923Y2gz7eDjJCTl2JdkVMMRgjcVX60vEMeWH2YtfVfAhXU43eUz"), 
+            new Voucher("12345", "l3nsNDA7MKJHGnJQOJYtRjfNvwBPI1kworX/ksE/7/FW17TaSSMzK1ru1CJqC12t")
         );
         doReturn(vouchers).when(repository).findByPhone("12345");
 
