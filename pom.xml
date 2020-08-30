@@ -10,6 +10,7 @@
 
 	<modules>
 		<module>voucher-service</module>
+		<module>vendor-service</module>
 	</modules>
 
 </project>
