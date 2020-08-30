@@ -13,8 +13,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class VoucherService {
 
-    @Value("${vender.service.url}")
-    private String venderServiceUrl;
+    @Value("${vendor.service.url}")
+    private String vendorServiceUrl;
 
     private final VoucherRepository repository;
 
@@ -29,7 +29,7 @@ public class VoucherService {
     public String getCode(Voucher newVoucher) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(
-            venderServiceUrl + "/get-voucher-code",
+            vendorServiceUrl + "/get-voucher-code",
             String.class
         );
         newVoucher.setCode(response.getBody());
