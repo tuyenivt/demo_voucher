@@ -10,6 +10,8 @@ services:
     ports:
       - "8081:8081"
     network_mode: "host"
+    depends_on:
+      - mysql
   vendor-service:
     build:
       context: ./vendor-service
