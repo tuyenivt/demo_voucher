@@ -1,4 +1,4 @@
-package com.abc.banking;
+package com.abc.banking.voucher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
