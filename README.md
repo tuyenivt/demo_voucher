@@ -23,6 +23,7 @@ This service is a part of ABC Banking eco system to help customer purchase prepa
 
 #### Voucher
 * Exposes API for checking all the voucher codes by phone number and return a voucher code when customer purchase prepaid data
+* Keeps the key to encrypt and decrypt voucher codes that treat as sensitive data, we store encrypted voucher code to database
 
 #### Vendor
 * Exposes API for getting a voucher code from a 3rd party, if we have more vendors, we can expand this service and different vendor via vendor identity
@@ -59,6 +60,7 @@ This service is a part of ABC Banking eco system to help customer purchase prepa
 * Spring Boot v2.3.3
 * Spring Data v2.3.3
 * JUnit 5
+* Jasypt v1.9.3
 * Docker v19.03
 * Docker Compose v1.25
 
