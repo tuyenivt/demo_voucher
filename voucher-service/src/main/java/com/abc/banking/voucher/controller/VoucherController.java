@@ -28,7 +28,7 @@ public class VoucherController {
     }
 
     @PostMapping("/vouchers")
-    public String newVoucher(@RequestBody Voucher newVoucher) {
+    public Voucher newVoucher(@RequestBody Voucher newVoucher) {
         return service.getCode(newVoucher);
     }
 }

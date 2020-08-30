@@ -16,23 +16,25 @@ public class VoucherService {
     @Value("${vendor.service.url}")
     private String vendorServiceUrl;
 
+    private final RestTemplate restTemplate;
+
     private final VoucherRepository repository;
 
-    public VoucherService(VoucherRepository repository) {
+    public VoucherService(VoucherRepository repository, RestTemplate restTemplate) {
         this.repository = repository;
+        this.restTemplate = restTemplate;
     }
 
     public List<Voucher> getByPhone(String phone) {
         return repository.findByPhone(phone);
     }
 
-    public String getCode(Voucher newVoucher) {
-        RestTemplate restTemplate = new RestTemplate();
+    public Voucher getCode(Voucher newVoucher) {
         ResponseEntity<String> response = restTemplate.getForEntity(
             vendorServiceUrl + "/get-voucher-code",
             String.class
         );
         newVoucher.setCode(response.getBody());
-        return repository.save(newVoucher).getCode();
+        return repository.save(newVoucher);
     }
 }
