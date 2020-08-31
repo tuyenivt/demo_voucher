@@ -46,4 +46,8 @@ public class VoucherService {
         voucher.setCode(stringEncryptor.decrypt(voucher.getCode()));
         return voucher;
     }
+
+    public String getVendorServiceUrl() {
+        return vendorServiceUrl;
+    }
 }
