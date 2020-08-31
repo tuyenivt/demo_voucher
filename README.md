@@ -55,6 +55,14 @@ This service is a part of ABC Banking eco system to help customer purchase prepa
   * vendor-mockserver: simulating 3rd party response
 * pom.xml: gathering all modules of this project
 
+## Environment
+
+### voucher-service (application.properties)
+* VOUCHER_SERVICE_PORT: voucher-service server port
+* MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD: mysql endpoint and credential
+* VENDOR_SERVICE_URL: vendor-service endpoint
+* JASYPT_ENCRYPTOR_PASSWORD: encrypt password that using to encrypt voucher code in database and descrypt it before return to customer
+
 ## Libraries and frameworks and tools
 * Java 11
 * Spring Boot v2.3.3
