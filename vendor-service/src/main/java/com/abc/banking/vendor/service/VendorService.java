@@ -11,9 +11,18 @@ public class VendorService {
     @Value("${vendor.voucher.url}")
     private String vendorVoucherUrl;
 
+    private final RestTemplate restTemplate;
+
+    public VendorService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
     public String getCode() {
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(vendorVoucherUrl, String.class);
         return response.getBody();
+    }
+
+    public String getVendorVoucherUrl() {
+        return vendorVoucherUrl;
     }
 }
